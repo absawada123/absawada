@@ -1,25 +1,24 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 
-const repoName = 'Ab'; // IMPORTANT: REPLACE WITH YOUR REPOSITORY NAME
+// Determine if the environment is for production (deployment)
+const isProd = process.env.NODE_ENV === 'production';
+
+// Your GitHub repository name, MUST be lowercase to match the GitHub Pages URL
+const repoName = 'absawada';
 
 const nextConfig = {
   reactStrictMode: true,
   
-  // Configure Next.js to export a static site
+  // Static export configuration
   output: 'export',
-
-  // Set the base path for the project
-  // This is the subdirectory on GitHub Pages where the site will be served
-  basePath: `/${repoName}`,
-
-  // Set the asset prefix to the same value as the base path
-  assetPrefix: `/${repoName}/`,
-
-  // Since we are exporting a static site, we must disable image optimization
   images: {
     unoptimized: true,
   },
+
+  // Conditionally set basePath and assetPrefix ONLY for production builds.
+  basePath: isProd ? `/${repoName}` : undefined,
+  assetPrefix: isProd ? `/${repoName}/` : undefined,
 };
 
 module.exports = nextConfig;
