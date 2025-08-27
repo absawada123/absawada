@@ -1,0 +1,54 @@
+/* src/styles/animations.css */
+
+/* 1. Blinking Cursor Animation */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 2. Paper Flip Animation for Preloader */
+/* The parent container should have 'perspective' property */
+@keyframes paperFlip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+
+/* 3. Image/Paper Printing Effect */
+/* This simulates content being 'printed' from top to bottom */
+@keyframes print {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+/* 4. Typing Animation for Preloader Text */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes print-reveal {
+  from {
+    transform: translateY(100%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
