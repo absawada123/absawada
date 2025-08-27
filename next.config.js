@@ -1,7 +1,7 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 
-const repoName = 'your-repo-name'; // IMPORTANT: REPLACE WITH YOUR REPOSITORY NAME
+const repoName = 'Ab'; // IMPORTANT: REPLACE WITH YOUR REPOSITORY NAME
 
 const nextConfig = {
   reactStrictMode: true,
