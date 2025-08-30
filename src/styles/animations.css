@@ -52,3 +52,43 @@
     opacity: 1;
   }
 }
+
+.profile-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  background-color: #f3f4f6; /* ADD THIS: A light paper-like background color */
+}
+
+.profile-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease-in-out;
+}
+
+.profile-image-color {
+  /* We will animate this clip-path with JavaScript */
+  clip-path: inset(0 100% 0 0);
+}
+
+.typewriter-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px; /* Width of the cursor */
+  height: 20px; /* Height of each "printed" line */
+  background-color: #00ff00; /* A bright, retro cursor color */
+  box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+  opacity: 0; /* Hidden by default */
+  animation: cursor-blink 1s infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

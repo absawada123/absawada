@@ -10,13 +10,15 @@ const projectsData = [
     title: "OpSuite",
     description: "An integrated desktop app for operational management, featuring real-time monitoring, predictive analytics, and AI-driven insights.",
     techStack: ["Electron", "React", "TypeScript", "Vite", "Node.js", "SQLite"],
-    image: "/images/project1.png"
+    image: "/images/project1.png",
+    video: null // No video for this project
   },
   {
     title: "Tenant Management System",
     description: "An offline-first desktop app for property management, featuring tenant/unit tracking, payment processing, and a secure QR-based visitor system.",
     techStack: ["Electron", "React", "TypeScript", "Vite", "Tailwind CSS", "SQLite", "Express.js", "Twilio"],
-    image: "/images/project2.png"
+    image: "/images/project2.png",
+    video: "/video/tms.mp4" // Add the video path here
   },
    {
     title: "ERP",
@@ -36,7 +38,8 @@ const projectsData = [
     "EmailJS",
     "Tesseract.js"
   ],
-    image: "/images/commingsoon.jpg"
+    image: "/images/commingsoon.jpg",
+    video: null // No video for this project
   },
 ];
 
@@ -71,6 +74,7 @@ const Projects = () => {
               description={project.description}
               techStack={project.techStack}
               image={project.image}
+              video={project.video} // Pass the video prop
               onImageClick={handleOpenModal} // Pass the handler to the card
             />
           ))}
