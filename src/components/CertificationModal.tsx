@@ -1,6 +1,8 @@
 // src/components/CertificationModal.tsx
 import React from 'react';
+import { useRouter } from 'next/router';
 
+// Define the shape of the 'cert' object for the modal
 interface Certification {
   issuer: string;
   title: string;
@@ -11,6 +13,7 @@ interface Certification {
   credentialUrl: string;
 }
 
+// Define the shape of the component's props
 interface CertificationModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -18,6 +21,7 @@ interface CertificationModalProps {
 }
 
 const CertificationModal = ({ isOpen, onClose, cert }: CertificationModalProps) => {
+  const { basePath } = useRouter();
   if (!isOpen || !cert) return null;
 
   return (
@@ -35,24 +39,21 @@ const CertificationModal = ({ isOpen, onClose, cert }: CertificationModalProps) 
         >
           &times;
         </button>
-        
         <div className="flex items-center gap-6 mb-6">
-          <img src={cert.logo} alt={`${cert.issuer} logo`} className="w-20 h-20 object-contain" />
+          <img src={`${basePath}${cert.logo}`} alt={`${cert.issuer} logo`} className="w-20 h-20 object-contain" />
           <div>
             <h2 className="text-3xl font-bold text-dark-gray">{cert.title}</h2>
             <p className="text-lg text-dark-gray/80">{cert.issuer}</p>
             <p className="text-sm text-dark-gray/60">Issued: {cert.date}</p>
           </div>
         </div>
-        
         <div className="border-t border-light-gray pt-4">
-          <p className="font-sans text-base leading-relaxed mb-4">{cert.description}</p>
+          <p className="font-sans text-base leading-relaxed my-4">{cert.description}</p>
           <p className="text-sm text-dark-gray/70">
             <strong>Credential ID:</strong> {cert.credentialId}
           </p>
-          
           {cert.credentialUrl && cert.credentialUrl !== '#' && (
-            <a 
+            <a
               href={cert.credentialUrl}
               target="_blank"
               rel="noopener noreferrer"

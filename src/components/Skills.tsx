@@ -1,63 +1,80 @@
 // src/components/Skills.tsx
-import React, { useRef } from 'react';
-import { useIntersectionObserver } from '@/utils/scrollUtils';
-import { useTypingScroll } from '@/hooks/useTypingScroll';
-import ProgressBar from './ProgressBar';
+import React from 'react';
+import { motion } from 'framer-motion';
+import SkillCard from './SkillCard'; // Import the new component
 
-const skillsData = {
-  "Software & Development": [
-    { name: "Full-Stack Development", level: 95 },
-    { name: "Web Development", level: 60 },
-    { name: "Software Development", level: 80 },
-    { name: "Software as a Service (SaaS)", level: 70 },
-  ],
-  "Data & AI": [
-    { name: "Artificial Intelligence (AI)", level: 80 },
-    { name: "Data Analysis", level: 50 },
-    { name: "Databases & SQLite", level: 90 },
-    { name: "Data Science", level: 75 },
-  ],
-  "Hardware & Electronics": [
-    { name: "Computer Hardware", level: 100 },
-    { name: "Computer & Electronics Repair", level: 100 },
-    { name: "Cell Phone Repair", level: 80 },
-    { name: "Electrical Wiring", level: 70 },
-  ],
-  "Tools & DevOps": [
-    { name: "DevOps", level: 50 },
-    { name: "Adobe Photoshop", level: 90 },
-    { name: "Adobe Premiere Pro", level: 90 },
-  ],
+// Import icons from react-icons
+import {
+  FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaDatabase
+} from 'react-icons/fa';
+import {
+  SiTypescript, SiJavascript, SiNextdotjs, SiTailwindcss, SiVite,
+  SiExpress, SiSqlite, SiElectron, SiPuppeteer, SiAdobephotoshop, SiAdobepremierepro
+} from 'react-icons/si';
+import { TbDeviceDesktopAnalytics, TbApi, TbCpu, TbRobot } from 'react-icons/tb'; // Added TbRobot
+import { GiArtificialIntelligence } from 'react-icons/gi';
+
+// New data structure for skills
+const skillsData = [
+  { name: 'HTML5/CSS3', icon: <FaHtml5 />, description: 'Responsive & Modern Layouts' },
+  { name: 'JavaScript', icon: <SiJavascript />, description: 'ES6+ Syntax & Concepts' },
+  { name: 'TypeScript', icon: <SiTypescript />, description: 'Static Typing & Scalability' },
+  { name: 'React.js', icon: <FaReact />, description: 'Component-Based Architecture' },
+  { name: 'Next.js', icon: <SiNextdotjs />, description: 'SSR & SSG Framework' },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss />, description: 'Utility-First Styling' },
+  { name: 'TanStack Query', icon: <TbDeviceDesktopAnalytics />, description: 'Server State Management' },
+  { name: 'Node.js', icon: <FaNodeJs />, description: 'Backend JavaScript Runtime' },
+  { name: 'Express', icon: <SiExpress />, description: 'Minimalist Web Framework' },
+  { name: 'Databases', icon: <FaDatabase />, description: 'SQL, SQLite, Supabase, PostgreSQL, MySQL' },
+  { name: 'Electron', icon: <SiElectron />, description: 'Desktop App Development' },
+  { name: 'AI/ML APIs', icon: <GiArtificialIntelligence />, description: 'Gemini & Groq Integration' },
+  { name: 'Web Scraping', icon: <SiPuppeteer />, description: 'Puppeteer & Cheerio' },
+  { name: 'Git/GitHub', icon: <FaGitAlt />, description: 'Version Control Systems' },
+  { name: 'Photoshop', icon: <SiAdobephotoshop />, description: 'UI/UX Design & Graphics' },
+  { name: 'Premiere Pro', icon: <SiAdobepremierepro />, description: 'Video Editing & Production' },
+  { name: 'Hardware/Repair', icon: <TbCpu />, description: 'PC Building & Electronics' },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
 };
 
-const SkillCategory = ({ title, skills }: { title: string; skills: { name: string; level: number }[] }) => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const isIntersecting = useIntersectionObserver(titleRef);
-  const typedTitle = useTypingScroll(title, isIntersecting);
-
-  return (
-    <div className="bg-light-gray p-6 rounded-lg shadow-md">
-      <h3 ref={titleRef} className="text-2xl font-mono font-semibold mb-6 text-pastel-blue">
-        {typedTitle}
-        <span className="animate-blink">|</span>
-      </h3>
-      <div>
-        {skills.map((skill) => (
-          <ProgressBar key={skill.name} skill={skill.name} percentage={skill.level} />
-        ))}
-      </div>
-    </div>
-  );
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
 };
 
 const Skills = () => {
   return (
-    <section id="skills" className="min-h-screen py-20">
-      <h2 className="text-4xl font-mono font-bold mb-12 text-center">Skills & Tools</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {Object.entries(skillsData).map(([category, skills]) => (
-          <SkillCategory key={category} title={category} skills={skills} />
-        ))}
+    <section id="skills" className="py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg-px-8">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-12">
+          Skills & Tools
+        </h2>
+        <motion.div
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {skillsData.map((skill, index) => (
+            <motion.div key={index} variants={itemVariants} style={{ minHeight: '180px' }}>
+              <SkillCard
+                name={skill.name}
+                icon={skill.icon}
+                description={skill.description}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

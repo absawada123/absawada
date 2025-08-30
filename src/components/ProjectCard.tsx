@@ -1,7 +1,9 @@
 // src/components/ProjectCard.tsx
 import React, { useRef } from 'react';
 import { useIntersectionObserver } from '@/utils/scrollUtils';
+import { useRouter } from 'next/router';
 
+// Define the shape of the props
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -11,6 +13,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ title, description, techStack, image, onImageClick }: ProjectCardProps) => {
+  const { basePath } = useRouter();
   const cardRef = useRef<HTMLDivElement>(null);
   const isVisible = useIntersectionObserver(cardRef, { threshold: 0.2 });
 
@@ -18,15 +21,14 @@ const ProjectCard = ({ title, description, techStack, image, onImageClick }: Pro
     <div
       ref={cardRef}
       className={`bg-light-gray rounded-lg shadow-md p-6 flex flex-col transition-opacity duration-500 ${isVisible ? 'animate-[print_1.2s_steps(12,end)_forwards] opacity-100' : 'opacity-0'}`}
-      style={{ overflow: 'hidden' }} // Keep overflow hidden for the animation
+      style={{ overflow: 'hidden' }}
     >
-      {/* Image container with fixed aspect ratio and hover effect */}
       <div
         className="relative w-full aspect-video overflow-hidden mb-4 rounded cursor-pointer group"
         onClick={() => onImageClick(image)}
       >
         <img
-          src={image}
+          src={`${basePath}${image}`}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
@@ -36,12 +38,11 @@ const ProjectCard = ({ title, description, techStack, image, onImageClick }: Pro
           </p>
         </div>
       </div>
-
       <div className="flex-grow flex flex-col">
         <h3 className="text-2xl font-mono font-bold mb-2">{title}</h3>
         <p className="font-sans mb-4 flex-grow">{description}</p>
         <div className="flex flex-wrap gap-2 mt-auto">
-          {techStack.map((tech) => (
+          {techStack.map((tech: string) => ( // Add type for 'tech'
             <span key={tech} className="bg-pastel-blue text-paper-white px-2 py-1 text-sm rounded">
               {tech}
             </span>

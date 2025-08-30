@@ -1,6 +1,8 @@
 // src/components/Modal.tsx
 import React from 'react';
+import { useRouter } from 'next/router';
 
+// Define the shape of the props
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -8,16 +10,17 @@ interface ModalProps {
 }
 
 const Modal = ({ isOpen, onClose, imageUrl }: ModalProps) => {
+  const { basePath } = useRouter();
   if (!isOpen) return null;
 
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-      onClick={onClose} // Close modal on backdrop click
+      onClick={onClose}
     >
       <div
         className="relative bg-paper-white p-4 rounded-lg shadow-xl max-w-4xl max-h-[90vh]"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal content
+        onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
@@ -25,7 +28,7 @@ const Modal = ({ isOpen, onClose, imageUrl }: ModalProps) => {
         >
           &times;
         </button>
-        <img src={imageUrl} alt="Project Preview" className="max-w-full max-h-[85vh] object-contain" />
+        <img src={`${basePath}${imageUrl}`} alt="Project Preview" className="max-w-full max-h-[85vh] object-contain" />
       </div>
     </div>
   );
