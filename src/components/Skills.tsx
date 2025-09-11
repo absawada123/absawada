@@ -1,18 +1,19 @@
-// src/components/Skills.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import SkillCard from './SkillCard'; // Import the new component
 
 // Import icons from react-icons
 import {
-  FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaDatabase
+  FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaDatabase,
+  FaTools, FaRulerCombined, FaDraftingCompass, FaHardHat
 } from 'react-icons/fa';
 import {
   SiTypescript, SiJavascript, SiNextdotjs, SiTailwindcss, SiVite,
   SiExpress, SiSqlite, SiElectron, SiPuppeteer, SiAdobephotoshop, SiAdobepremierepro
 } from 'react-icons/si';
-import { TbDeviceDesktopAnalytics, TbApi, TbCpu, TbRobot } from 'react-icons/tb'; // Added TbRobot
-import { GiArtificialIntelligence } from 'react-icons/gi';
+import { TbDeviceDesktopAnalytics, TbApi, TbCpu, TbRobot } from 'react-icons/tb';
+import { GiArtificialIntelligence, GiGears } from 'react-icons/gi';
+import { MdElectricBolt } from 'react-icons/md';
 
 // New data structure for skills
 const skillsData = [
@@ -30,9 +31,23 @@ const skillsData = [
   { name: 'AI/ML APIs', icon: <GiArtificialIntelligence />, description: 'Gemini & Groq Integration' },
   { name: 'Web Scraping', icon: <SiPuppeteer />, description: 'Puppeteer & Cheerio' },
   { name: 'Git/GitHub', icon: <FaGitAlt />, description: 'Version Control Systems' },
-  { name: 'Photoshop', icon: <SiAdobephotoshop />, description: 'UI/UX Design & Graphics' },
-  { name: 'Premiere Pro', icon: <SiAdobepremierepro />, description: 'Video Editing & Production' },
+{
+  name: 'Adobe Suite',
+  icon: (
+    <>
+      <SiAdobephotoshop className="inline-block mr-1" />
+      <SiAdobepremierepro className="inline-block" />
+    </>
+  ),
+  description: 'Photoshop (UI/UX & Graphics) and Premiere Pro (Video Editing & Production)',
+},
   { name: 'Hardware/Repair', icon: <TbCpu />, description: 'PC Building & Electronics' },
+  { name: 'Hand Tools & Benchwork', icon: <FaTools />, description: 'Files, Hacksaw, Vise, Taps & Dies, Scriber' },
+  { name: 'Machining', icon: <GiGears />, description: 'Lathe, Drilling, Milling, and Grinding machines' },
+  { name: 'Precision Measurement', icon: <FaRulerCombined />, description: 'Vernier Caliper, Micrometer, Protractors, Gauges' },
+  { name: 'CAD & Technical Drawing', icon: <FaDraftingCompass />, description: 'Basic CAD, Technical Diagram Reading & Implementation' },
+  { name: 'Electrical & Motors', icon: <MdElectricBolt />, description: 'Multimeter, Soldering, Motor Startup & Testing' },
+  { name: 'Safety & Maintenance', icon: <FaHardHat />, description: 'PPE, Machine Safety, Tool Care, Calibration' },
 ];
 
 const containerVariants = {

@@ -28,13 +28,23 @@ const certificationsData: Certification[] = [
     category: 'Technical'
   },
   {
-    issuer: "IBM SkillsBuild",
-    title: "AI Fundamentals",
-    date: "Aug 2025",
-    logo: "/images/aibadge.png",
-    credentialId: "e51befe9-f0cd-4383-9a2d-392fb6261bde",
-    description: "This credential earner demonstrates knowledge of artificial intelligence (AI) concepts, such as natural language processing, computer vision, machine learning, and neural networks...",
-    credentialUrl: "https://www.credly.com/badges/e51befe9-f0cd-4383-9a2d-392fb6261bde",
+    issuer: "Wadhwani Foundation",
+    title: "Impactful Writing",
+    date: "Nov 2024",
+    logo: "/images/wadhwani-logo.png",
+    credentialId: "6727190db53d7dced827ba32",
+    description: "This certification validates the ability to produce clear, concise, and impactful written communication for professional contexts.",
+    credentialUrl: "https://web.certificate.wfglobal.org/en/certificate?certificateId=6727190db53d7dced827ba32",
+    category: 'Soft Skills'
+  },
+  {
+    issuer: "Google Cloud",
+    title: "Cyber Security",
+    date: "September 2025",
+    logo: "/images/google-cloud-cybersecurity-certificate.png",
+    credentialId: "766c2d63-faa8-4643-9374-df38be170ba6",
+    description: "This certificate program prepares learners for cloud security analyst, cybersecurity specialist, and incident response analyst roles. It builds on familiarity with foundational cybersecurity concepts, including a basic understanding of network security, threat analysis, SQL, and incident detection and documentation. Cloud security analysts are uniquely positioned as the first line of defense in protecting organizational cloud assets from a wide array of cyber-related crimes.",
+    credentialUrl: "https://www.credly.com/earner/earned/badge/766c2d63-faa8-4643-9374-df38be170ba6",
     category: 'Technical'
   },
   {
@@ -97,6 +107,7 @@ const certificationsData: Certification[] = [
     credentialUrl: "https://web.certificate.wfglobal.org/en/certificate?certificateId=6727190db53d7dced827ba32",
     category: 'Soft Skills'
   }
+  
 ];
 
 const Certifications = () => {
