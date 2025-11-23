@@ -13,7 +13,7 @@ interface Certification {
   credentialId: string;
   description: string;
   credentialUrl: string;
-  category: 'Technical' | 'Soft Skills'; // New field for filtering
+  category: 'Technical' | 'Soft Skills';
 }
 
 const certificationsData: Certification[] = [
@@ -55,38 +55,30 @@ const certificationsData: Certification[] = [
     category: "Technical",
   },
   {
-    issuer: "eTESDA",
-    title: "Introduction to CSS",
+    issuer: "IBM SkillsBuild",
+    title: "AI Fundamentals",
     date: "Aug 2025",
-    logo: "/images/tesda.png",
-    credentialId: "9MwRCr8JJH",
+    logo: "/images/ai.png",
+    credentialId: "e51befe9-f0cd-4383-9a2d-392fb6261bde",
     description:
-      "This foundational module provides essential knowledge and skills in computer systems servicing...",
-    credentialUrl: "",
+      "This credential earner demonstrates knowledge of artificial intelligence (AI) concepts, such as natural language processing, computer vision, machine learning, deep learning, chatbots, and neural networks; AI ethics; and the applications of AI. The individual has a conceptual understanding of how to run an AI model using IBM Watson Studio. The earner is aware of the job outlook in fields that use AI and is familiar with the skills required for success in various roles in the domain.",
+    credentialUrl:
+      "https://www.credly.com/badges/e51befe9-f0cd-4383-9a2d-392fb6261bde",
     category: "Technical",
   },
+  // --- COMPILED eTESDA ENTRY ---
   {
     issuer: "eTESDA",
-    title: "Installing & Configuring Computer Systems",
+    title: "Computer Systems Servicing Modules",
     date: "Aug 2025",
     logo: "/images/tesda.png",
-    credentialId: "9IePGAjVkF",
+    credentialId: "9MwRCr8JJH | 9IePGAjVkF | KZNF5IpyWh",
     description:
-      "This module provides learners with the essential skills to install, configure, and maintain computer systems...",
+      "Completed a comprehensive series of modules covering: 1) Introduction to CSS, 2) Installing & Configuring Computer Systems, and 3) Setting Up Computer Networks. These modules equip learners with essential skills to maintain systems and configure networks.",
     credentialUrl: "",
     category: "Technical",
   },
-  {
-    issuer: "eTESDA",
-    title: "Setting Up Computer Networks",
-    date: "Aug 2025",
-    logo: "/images/tesda.png",
-    credentialId: "KZNF5IpyWh",
-    description:
-      "This module equips learners with the knowledge and skills required to set up and configure computer networks...",
-    credentialUrl: "",
-    category: "Technical",
-  },
+  // ----------------------------
   {
     issuer: "Alfred's Engine Room",
     title: "Best in Presentation",
@@ -94,7 +86,7 @@ const certificationsData: Certification[] = [
     logo: "/images/alfred.png",
     credentialId: "",
     description:
-      "Awarded the Best in Presentation at Alfred's Engine Room | Crafting Tomorrow's Ventures...",
+      "Awarded the Best in Presentation at Alfred's Engine Room | Crafting Tomorrow's Ventures: Kick-off and Ideation 2025, recognizing an outstanding innovative concept and an exceptional presentation that embodied the event’s theme, “Empowering Techpreneurs: Innovation through Community and Collaboration.” This honor highlights excellence in clarity, creativity, and communication during the ideation showcase held on 21 November 2025 at the AWS Office, Arthaland Century Pacific Tower, Bonifacio Global City, Taguig, Philippines.",
     credentialUrl: "",
     category: "Technical",
   },
