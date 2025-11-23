@@ -1,4 +1,3 @@
-// src/pages/index.tsx
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Preloader from '@/components/Preloader';
@@ -8,6 +7,7 @@ import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Certifications from '@/components/Certifications';
+import Testimonials from '@/components/Testimonials';
 import ContactForm from '@/components/ContactForm';
 
 export default function Home() {
@@ -36,6 +36,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Certifications />
+        <Testimonials />
         <ContactForm />
       </MainLayout>
     </>

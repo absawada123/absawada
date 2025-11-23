@@ -17,8 +17,19 @@ module.exports = {
       },
       fontFamily: {
         mono: ['"IBM Plex Mono"', 'monospace'],
-        sans: ['Inter', 'sans-serif'], // Updated to use Inter specifically
+        sans: ['Inter', 'sans-serif'],
       },
+      // Added animation utilities
+      animation: {
+        'blink': 'blink 1s step-end infinite',
+      },
+      // Added keyframes explicitly to Tailwind to ensure the class works independently of CSS files
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
+        }
+      }
     },
   },
   plugins: [],

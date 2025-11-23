@@ -17,25 +17,18 @@ interface Certification {
 }
 
 const certificationsData: Certification[] = [
+  // --- TECHNICAL ---
   {
     issuer: "IBM SkillsBuild",
     title: "Data Fundamentals",
     date: "Aug 2025",
     logo: "/images/DataFundamentals.png",
     credentialId: "1de69044-dd98-4c19-9dc6-1a8a2ff584ab",
-    description: "Demonstrates knowledge of data analytics concepts, methodologies, applications of data science, and the tools used in the data ecosystem...",
-    credentialUrl: "https://www.credly.com/badges/1de69044-dd98-4c19-9dc6-1a8a2ff584ab",
-    category: 'Technical'
-  },
-  {
-    issuer: "Wadhwani Foundation",
-    title: "Impactful Writing",
-    date: "Nov 2024",
-    logo: "/images/wadhwani-logo.png",
-    credentialId: "6727190db53d7dced827ba32",
-    description: "This certification validates the ability to produce clear, concise, and impactful written communication for professional contexts.",
-    credentialUrl: "https://web.certificate.wfglobal.org/en/certificate?certificateId=6727190db53d7dced827ba32",
-    category: 'Soft Skills'
+    description:
+      "Demonstrates knowledge of data analytics concepts, methodologies, applications of data science, and the tools used in the data ecosystem...",
+    credentialUrl:
+      "https://www.credly.com/badges/1de69044-dd98-4c19-9dc6-1a8a2ff584ab",
+    category: "Technical",
   },
   {
     issuer: "Google Cloud",
@@ -43,9 +36,11 @@ const certificationsData: Certification[] = [
     date: "September 2025",
     logo: "/images/google-cloud-cybersecurity-certificate.png",
     credentialId: "766c2d63-faa8-4643-9374-df38be170ba6",
-    description: "This certificate program prepares learners for cloud security analyst, cybersecurity specialist, and incident response analyst roles. It builds on familiarity with foundational cybersecurity concepts, including a basic understanding of network security, threat analysis, SQL, and incident detection and documentation. Cloud security analysts are uniquely positioned as the first line of defense in protecting organizational cloud assets from a wide array of cyber-related crimes.",
-    credentialUrl: "https://www.credly.com/earner/earned/badge/766c2d63-faa8-4643-9374-df38be170ba6",
-    category: 'Technical'
+    description:
+      "This certificate program prepares learners for cloud security analyst, cybersecurity specialist, and incident response analyst roles. It builds on familiarity with foundational cybersecurity concepts, including a basic understanding of network security, threat analysis, SQL, and incident detection and documentation...",
+    credentialUrl:
+      "https://www.credly.com/earner/earned/badge/766c2d63-faa8-4643-9374-df38be170ba6",
+    category: "Technical",
   },
   {
     issuer: "IBM SkillsBuild",
@@ -53,19 +48,22 @@ const certificationsData: Certification[] = [
     date: "Aug 2025",
     logo: "/images/wdbadge.png",
     credentialId: "61e1e966-c3e5-41f5-acc1-d08a909988da",
-    description: "Demonstrates knowledge of web development concepts, processes, and tools. Includes a conceptual understanding of developing interactive websites using HTML, CSS, and JavaScript...",
-    credentialUrl: "https://www.credly.com/badges/61e1e966-c3e5-41f5-acc1-d08a909988da",
-    category: 'Technical'
+    description:
+      "Demonstrates knowledge of web development concepts, processes, and tools...",
+    credentialUrl:
+      "https://www.credly.com/badges/61e1e966-c3e5-41f5-acc1-d08a909988da",
+    category: "Technical",
   },
-    {
+  {
     issuer: "eTESDA",
     title: "Introduction to CSS",
     date: "Aug 2025",
     logo: "/images/tesda.png",
     credentialId: "9MwRCr8JJH",
-    description: "This foundational module provides essential knowledge and skills in computer systems servicing...",
+    description:
+      "This foundational module provides essential knowledge and skills in computer systems servicing...",
     credentialUrl: "",
-    category: 'Technical'
+    category: "Technical",
   },
   {
     issuer: "eTESDA",
@@ -73,9 +71,10 @@ const certificationsData: Certification[] = [
     date: "Aug 2025",
     logo: "/images/tesda.png",
     credentialId: "9IePGAjVkF",
-    description: "This module provides learners with the essential skills to install, configure, and maintain computer systems...",
+    description:
+      "This module provides learners with the essential skills to install, configure, and maintain computer systems...",
     credentialUrl: "",
-    category: 'Technical'
+    category: "Technical",
   },
   {
     issuer: "eTESDA",
@@ -83,19 +82,35 @@ const certificationsData: Certification[] = [
     date: "Aug 2025",
     logo: "/images/tesda.png",
     credentialId: "KZNF5IpyWh",
-    description: "This module equips learners with the knowledge and skills required to set up and configure computer networks...",
+    description:
+      "This module equips learners with the knowledge and skills required to set up and configure computer networks...",
     credentialUrl: "",
-    category: 'Technical'
+    category: "Technical",
   },
+  {
+    issuer: "Alfred's Engine Room",
+    title: "Best in Presentation",
+    date: "Nov 2025",
+    logo: "/images/alfred.png",
+    credentialId: "",
+    description:
+      "Awarded the Best in Presentation at Alfred's Engine Room | Crafting Tomorrow's Ventures...",
+    credentialUrl: "",
+    category: "Technical",
+  },
+
+  // --- SOFT SKILLS ---
   {
     issuer: "Wadhwani Foundation",
     title: "Effective Speaking",
     date: "Nov 2024",
     logo: "/images/wadhwani-logo.png",
     credentialId: "6727178ab53d7dced827b746",
-    description: "This certification validates proficiency in effective verbal communication, active listening, and interpersonal skills essential for professional environments.",
-    credentialUrl: "https://web.certificate.wfglobal.org/en/certificate?certificateId=6727178ab53d7dced827b746",
-    category: 'Soft Skills'
+    description:
+      "This certification validates proficiency in effective verbal communication, active listening, and interpersonal skills...",
+    credentialUrl:
+      "https://web.certificate.wfglobal.org/en/certificate?certificateId=6727178ab53d7dced827b746",
+    category: "Soft Skills",
   },
   {
     issuer: "Wadhwani Foundation",
@@ -103,12 +118,14 @@ const certificationsData: Certification[] = [
     date: "Nov 2024",
     logo: "/images/wadhwani-logo.png",
     credentialId: "6727190db53d7dced827ba32",
-    description: "This certification validates the ability to produce clear, concise, and impactful written communication for professional contexts.",
-    credentialUrl: "https://web.certificate.wfglobal.org/en/certificate?certificateId=6727190db53d7dced827ba32",
-    category: 'Soft Skills'
+    description:
+      "This certification validates the ability to produce clear, concise, and impactful written communication...",
+    credentialUrl:
+      "https://web.certificate.wfglobal.org/en/certificate?certificateId=6727190db53d7dced827ba32",
+    category: "Soft Skills",
   }
-  
 ];
+
 
 const Certifications = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);

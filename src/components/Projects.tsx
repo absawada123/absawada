@@ -21,8 +21,8 @@ const projectsData = [
     video: "/video/tms.mp4" // Add the video path here
   },
    {
-    title: "ERP",
-    description: "PH ERP Suite is a comprehensive Philippines-based ERP system designed to streamline business processes, manage resources efficiently, and provide real-time insights for small to medium enterprises.",
+    title: "ERPhy",
+    description: "ERPhy is a modern, offline-first ERP for Filipino solopreneurs and SMEs. It brings AI-powered finance tools, CRM, job orders, asset tracking, receipt scanning, and PH-ready compliance into one simple desktop app. Built with Electron and React, it runs fast on SQLite and syncs to Supabase when online—making business management easy, smart, and accessible.",
      "techStack": [
     "Electron",
     "React",
@@ -38,7 +38,7 @@ const projectsData = [
     "EmailJS",
     "Tesseract.js"
   ],
-    image: "/images/commingsoon.jpg",
+    image: "/images/erphy.png",
     video: null // No video for this project
   },
 ];
