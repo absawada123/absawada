@@ -41,6 +41,35 @@ const projectsData = [
     image: "/images/erphy.png",
     video: null // No video for this project
   },
+  {
+    title: "Project Management System with Data Analytics for RBS Builders",
+  description:
+    "A comprehensive project management solution with integrated project management, data analytics, document processing, mapping, and AI-powered features for RBS Builders.",
+  techStack: [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "Express.js",
+    "Supabase",
+    "PostgreSQL",
+    "SQLite",
+    "MongoDB",
+    "React Query",
+    "Recharts",
+    "Leaflet",
+    "React Leaflet",
+    "Tesseract.js",
+    "Google Gemini",
+    "Groq",
+    "JWT",
+    "Axios",
+    "Multer",
+    "React Router"
+  ],
+    image: "/images/rbs.png",
+    video: null // No video for this project
+  },
 ];
 
 const Projects = () => {
